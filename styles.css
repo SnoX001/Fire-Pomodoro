@@ -1,0 +1,986 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#time{
+    display: flex;
+    margin-bottom: 0px;
+}
+
+
+#waterCanvas{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    margin: 0;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    display: flex;
+    margin-top: 0;
+    top: 0;
+    padding-top: 0;
+    
+    
+}
+
+#logo{
+    margin-left: 100px;
+    margin-top: 25px;
+    top: 0;
+    padding-top: 0;
+    font-size: 20px;
+}
+
+#main-logo {
+    height: 70px;
+    width:70px;
+    margin: 0px;
+    top: 0px;
+    padding: 0px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+#timer-option{
+    margin-left: 387px;
+    margin-top: 22px;
+    top: 0;
+    padding-top: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#report{
+    margin-left: 60px;
+    margin-top: 22px;
+    top: 0;
+    padding-top: 0;
+    font-size: 15px;
+}
+
+#logo-2{
+    margin-left: 400px;
+    margin-top: 20px;
+    top: 0;
+    padding-top: 0;
+    font-size: 20px;
+}
+
+#focus-timer{
+    margin-top: 30px;
+    top: 0;
+    padding-top: 0;
+    font-size: 20px;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,h2,h3 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.two-dot{
+    display: table;
+    margin-top: 80px;
+    margin-left:35px;
+    margin-right:35px;
+
+}
+
+.first-dot{
+    height:35px;
+    width:35px;
+    border-radius: 100%;
+    background-color: #333;
+}
+
+.second-dot{
+    height:35px;
+    width:35px;
+    margin-top:20px;
+    border-radius: 100%;
+    background-color: #333;
+}
+
+.timer {
+    font-size: 13rem;
+    color: rgb(61, 61, 61);
+    margin-bottom: 0px;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    bottom: 0;
+}
+
+#pomodoro-counter{
+    display: flex;
+    width: 120px;
+    height: 40px;
+    background-color: #9b9b9b;
+    box-shadow: 0px 0px 15px 1px #9b9b9b;
+    margin-top: 0px;
+    padding-top: 0px;
+    top: 0;
+    border-radius: 18px;
+}
+
+#pomodoro-counter-logo{
+    height: 25px;
+    width: 25px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    width: 80%;
+    height: 40px;
+    margin-top: 0px;
+    padding-top: 0px;
+    top: 0;
+    border-radius: 18px;
+}
+
+/* Sayı girdilerindeki yukarı/aşağı ok tuşlarını kaldır */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#focus,#short-break,#long-break{
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    height: 100%;
+    width: 174px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0.3px #b9b9b9;
+    transform: scale(1);
+    /* Animasyonun smooth olması için bir süre tanımla */
+    animation: scaleDown 0.8s ease forwards;
+    user-select: none; /* Metin seçimini engeller */
+    -webkit-user-select: none; /* WebKit tarayıcıları için */
+    -moz-user-select: none; /* Firefox için */
+    -ms-user-select: none; /* Eski IE için */
+}
+    
+
+#focus:hover {
+    /* Hover sırasında scaleUp animasyonunu çalıştır */
+    animation: scaleUp 0.8s ease forwards;
+}
+#short-break:hover {
+    /* Hover sırasında scaleUp animasyonunu çalıştır */
+    animation: scaleUp 0.8s ease forwards;
+
+}
+
+#long-break:hover {
+    /* Hover sırasında scaleUp animasyonunu çalıştır */
+    animation: scaleUp 0.8s ease forwards;
+}
+
+/* Büyüme Animasyonu */
+@keyframes scaleUp {
+    from {
+        transform: scale(1); /* Başlangıç boyutu */
+    }
+    to {
+        transform: scale(1.06); /* Büyüme */
+    }
+    from{
+        z-index: 1;
+    }
+    to{
+        z-index: 2;
+    }
+}
+@keyframes scaleUp-1 {
+    from {
+        transform: scale(1); /* Başlangıç boyutu */
+    }
+    to {
+        transform: scale(1.06); /* Büyüme */
+    }
+}
+
+/* Küçülme Animasyonu */
+@keyframes scaleDown {
+    from {
+        transform: scale(1.06); /* Hover durumundan çıkan boyut */
+    }
+    to {
+        transform: scale(1); /* Orijinal boyuta geri dön */
+    }
+}
+
+
+#f-container-name{
+    margin-left: 17px;
+    font-size: 0.8rem;
+    margin-bottom: 11.5px;
+    right: 0;
+    margin-right: 0px;
+    margin-top: 15px;
+    bottom:0;
+}
+
+#s-container-name{
+    margin-left: 17px;
+    font-size: 0.8rem;
+    margin-bottom: 11.5px;
+    right: 0;
+    margin-right: 0px;
+    margin-top: 15px;
+    bottom:0;
+}
+
+#l-container-name{
+    margin-left: 17px;
+    font-size: 0.8rem;
+    margin-bottom: 11.5px;
+    right: 0;
+    margin-right: 0px;
+    margin-top: 15px;
+    bottom:0;
+}
+
+#focus{
+    border-style: solid;
+    border-width: 2px;
+}
+
+#short-break{
+    background-color: rgb(247, 247, 247);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    padding-right: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#long-break{
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.start-pause {
+    background-color:#333;
+    color: white;
+    border: none;
+    padding: 3px 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 20px;
+    opacity: 80%;
+    margin: auto;
+    box-shadow: 0px 0px 10px 1px #202020;
+}
+
+
+
+.start-pause:hover {
+    background-color: #ff4d4d;
+}
+
+#focus input,#short-break input,#long-break input[type="number"] {
+    text-align: right; /* Yazı sağa hizalanır */
+    font-size: 1.7rem;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #f4f4f4;
+    height: 25px;
+    width: 60px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+#focus-logo ,#short-logo ,#long-logo{
+    height:17px;
+    width: 17px;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding-right: 0px;
+    right: 0px;
+}
+
+
+#f-minutes-text{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 25px;
+    margin-top: 3.4px;
+    color: #f4f4f4;
+}
+
+#s-minutes-text{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 25px;
+    margin-top: 3.4px;
+    color: #f4f4f4;
+}
+
+#l-minutes-text{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 25px;
+    margin-top: 3.4px;
+    color: #f4f4f4;
+}
+
+#start-button-text{
+    color: #f4f4f4;
+    font-size: 1rem;
+}
+
+/* Geçiş için genel stil ayarları */
+button, .text-element {
+    transition: background-color 0.5s ease, color 0.5s ease; /* Arka plan rengi ve metin rengi geçiş süresi */
+}
+
+.text-element {
+    transition: color 0.5s ease; /* Sadece metin rengi için geçiş süresi */
+}
+
+/* Başlangıçtaki durum (varsayılan renkler) */
+button {
+    background-color: #ffffff; /* Varsayılan arka plan rengi */
+}
+
+.text-element {
+    color: #000000; /* Varsayılan metin rengi */
+}
+
+/* Buton ve metin renk geçişleri için özel sınıflar */
+#focus {
+    transition: background-color 0.5s ease;
+}
+
+#short-break {
+    transition: background-color 0.5s ease;
+}
+
+#long-break {
+    transition: background-color 0.5s ease;
+}
+
+#focus-text, #short-break-text, #long-break-text {
+    transition: color 0.5s ease;
+}
+
+
+/* Modal stil ayarları */
+.modal {
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    display: none; /* Modal varsayılan olarak gizli */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf arka plan */
+}
+
+.modal-content {
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    display: table;
+    background-color: #fff;
+    margin: 15% auto; /* Sayfanın ortasında konumlanması */
+    padding: 20px;
+    top : 0px;
+    padding-top: 0px;
+    margin-top:30px ;
+    width: 80%; /* Genişlik ayarı */
+    max-width: 400px;
+    border-radius:15px;
+    animation: modal-animation 0.2s ease forwards;
+}
+
+@keyframes modal-animation{
+    from {
+        scale:calc(0.5);
+    }
+    to {
+        scale:calc(1);
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top:12px ;
+}
+
+.close:hover, .close:focus {
+    color: rgb(231, 10, 10);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#modal-options{
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    float: left;
+    margin-top: 12px;
+}
+
+#dropdown-item-text{
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin: 0px;
+}
+
+p {
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin: 0px;
+}
+
+.button-container{
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    display: table;
+    margin-left: 340px; 
+    margin-top: 10px;
+    
+}
+
+.modal-container{
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    display: table;
+    width: 70vh;
+    height : 30vh;
+    background-color: #f4f4f4;
+   
+    
+    
+    
+}
+
+.o-button{
+    background-color: #d2d2d2;
+    width: 78px;
+    height: 38px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.o-button::before{
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 200px;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+input:checked + .o-button{
+    background-color: #ff4d4d;
+}
+
+input:checked + .o-button::before{
+    transform:translateX(40px);
+}
+
+#check {
+    display: none;
+}
+
+#theme-group{
+    display: flex;
+}
+
+#theme-selector{
+    margin: auto;
+    margin-right: 0px;
+
+}
+
+#save-theme{
+    margin: auto;
+    margin-left: 175px;
+    margin-top: 10px;
+    height: 50px;
+    background-color: #4b8cee;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0.3px #b9b9b9;
+    z-index: 1;
+    animation: scaleDown 0.8s ease forwards;
+}
+
+#save-text{
+    font-size: 20px;
+    position: relative;
+    margin: 0px;
+    color: #fcfcfc;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#save-theme:hover{
+    animation: scaleUp 0.8s ease forwards;
+}
+
+#theme{
+    margin-left:20px ;
+
+}
+
+#streak{
+    margin-left:25px ;
+}
+
+.number-input {
+    width: 218px;
+    height: 10px;
+    margin-top: 30px;
+    left: 10px;
+    margin-left: 55px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+    outline: none;
+}
+
+#streak-group{
+    display: flex;
+}
+
+.number-input:focus {
+    border-color: #2d692f; /* Modern yeşil vurgusu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input alanı üzerine fareyle gelindiğinde sınır rengini değiştir */
+.number-input:hover {
+    border-color: #4CAF50;
+}
+
+
+#line{
+    margin: auto;
+    align-items: center;
+    height: 1px;
+    width: 400px;
+    background-color: #464242;
+
+}
+
+
+
+
+/* Custom Dropdown kapsayıcı */
+.custom-dropdown {
+    position: relative;
+    width: 250px;
+    margin-left: 50px;
+    margin-right:0px ;
+    right: 0px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-dropdown * {
+    user-select: none; /* Metin seçimini engeller */
+    -webkit-user-select: none; /* WebKit tarayıcıları için */
+    -moz-user-select: none; /* Firefox için */
+    -ms-user-select: none; /* Eski IE için */
+}
+
+/* Seçili öğe stili (Eski id: theme-selector) */
+#theme-selector {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Seçili öğe hover efekti */
+#theme-selector:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Seçeneklerin kutusu */
+.dropdown-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.dropdown-options.open {
+    display: block;
+}
+
+/* Seçenek stili */
+.dropdown-item {
+    padding: 12px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Smooth geçiş */
+.dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 992px) {
+
+    /* Navbar mobil görünüm */
+    .navbar {
+        padding: 5px 0;
+    }
+
+    #logo, #timer-option, #report, #focus-timer, #logo-2 {
+        margin: 5px 0;
+        font-size: 1.2rem;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+    }
+
+    #logo{
+        margin-left: 90px;
+        margin-top: 15px;
+    }
+
+    #timer-option{
+        margin-top: 15px;
+        margin-right: 100px;
+    }
+    
+    #focus-timer{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px;
+        margin: auto;
+        text-align: center;
+        margin-top: 0px;
+        
+    }
+
+    .buttons{
+        display: table;
+
+    }
+
+
+
+    #focus,#short-break,#long-break{
+        height: 80px;
+        width:100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin: 0px;
+    }
+
+    #short-break{
+        padding-right: 0px;
+        width: 100%;
+    }
+
+    #pomodoro-counter{
+        margin-top: 0px;
+        padding: 0px;
+        margin-bottom: 5px;
+
+    }
+
+    .start-pause,#start-pause-id{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        width: 200px;
+        width:100%;
+        
+    }
+
+    #main-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Timer */
+    .timer {
+        font-size: 18vw;
+        display: table-column;
+        margin: auto;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    #time{
+        display: flex;
+        margin-bottom: 0px;
+    }
+
+
+
+    /* Dotlar küçültülsün */
+    .first-dot, .second-dot {
+        width: 16px;
+        height: 16px;
+        margin: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    }
+
+    .two-dot{
+        margin-bottom: 0px;
+        margin-top: 48px;
+    }
+
+
+
+    .container{
+        margin: auto;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-width: 992px)  {
+    /* Navbar mobil görünüm */
+    .navbar {
+        padding: 5px 0;
+    }
+
+    #logo, #timer-option, #report, #focus-timer, #logo-2 {
+        margin: 5px 0;
+        font-size: 1.2rem;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+    }
+
+    #logo{
+        margin-left: 90px;
+        margin-top: 15px;
+    }
+
+    #timer-option{
+        margin-top: 15px;
+        margin-right: 100px;
+        margin-bottom: 0px;
+    }
+    
+    #focus-timer{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px;
+        margin: auto;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        
+    }
+
+    .buttons{
+        width: 100%;
+        height: 100px;
+
+    }
+    
+
+    #focus,#short-break,#long-break{
+        height: 80px;
+        width:14%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin: 0px;
+        margin-right: 5px;
+    }
+    #focus{
+        margin: 0px;
+        margin-left: 140px;
+        margin-right: 5px;
+    }
+    #short-break{
+        padding-right: 0px;
+        width: 14%;
+    }
+    #long-break{
+        margin-right: 10px;
+    }
+
+    #pomodoro-counter{
+        margin-top: 0px;
+        padding: 0px;
+        margin-bottom: 55px;
+
+    }
+
+    .start-pause{
+        width:10%;
+        height: 80px;
+        margin: 0%;
+        
+    }
+
+    #main-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Timer */
+    .timer {
+        font-size: 16vw;
+        display: table-column;
+        margin: auto;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    #time{
+        display: flex;
+        margin-bottom: 0px;
+    }
+
+
+
+    /* Dotlar küçültülsün */
+    .first-dot, .second-dot {
+        margin: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-top: 35px;
+    }
+
+    .two-dot{
+        margin-bottom: 0px;
+        margin-top: 48px;
+    }
+
+
+
+    .container{
+        margin: auto;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}

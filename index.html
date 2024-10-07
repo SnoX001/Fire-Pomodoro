@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fire Pomodoro</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar">
+            <img  id="main-logo" src="images/Adsız_tasarım__2_-removebg-preview.png" viewBox="0 0 448 512">
+            <h1 id="logo" > Fire Pomodoro</h1>
+            <h2 id="timer-option" >Timer Option</h2>
+        </div>
+        
+        <div class="container">
+            <div class="timer">
+                <h3 id="focus-timer">Focus Timer</h3>
+                <div id="time">
+                <span id="minutes">25</span>
+                <div class="two-dot">
+                    <div class="first-dot"></div>
+                    <div class="second-dot"></div>   
+                </div>
+                <span id="seconds">00</span></div>
+            </div>
+            <div id="pomodoro-counter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  id="pomodoro-counter-logo" class="s-1"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  id="pomodoro-counter-logo" class="s-1"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  id="pomodoro-counter-logo" class="s-1"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  id="pomodoro-counter-logo" class="s-1"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5c-16.5-21-46-58.5-62.8-79.8c-6.3-8-18.3-8.1-24.7-.1c-33.8 42.5-50.8 69.3-50.8 99.4C112 375.4 162.6 416 225.7 416z"/></svg>
+            </div>
+            <div class="buttons">
+                <div id="focus"><h4 id="f-container-name">Focus</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="focus-logo"><path fill="#ffffff" d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+                    <input type="number" id="focus-value" value="0.1"><h3 id="f-minutes-text">min</h3>
+                </div>
+                <div id="short-break"><h4 id="s-container-name">Short Break</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="short-logo"><path fill="#ffffff" d="M88 0C74.7 0 64 10.7 64 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C120.5 112.3 128 119.9 128 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C119.5 47.7 112 40.1 112 24c0-13.3-10.7-24-24-24zM32 192c-17.7 0-32 14.3-32 32L0 416c0 53 43 96 96 96l192 0c53 0 96-43 96-96l16 0c61.9 0 112-50.1 112-112s-50.1-112-112-112l-48 0L32 192zm352 64l16 0c26.5 0 48 21.5 48 48s-21.5 48-48 48l-16 0 0-96zM224 24c0-13.3-10.7-24-24-24s-24 10.7-24 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C232.5 112.3 240 119.9 240 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C231.5 47.7 224 40.1 224 24z"/></svg>
+                    <input type="number" id="short-break-value" value="0.1"><h3 id="s-minutes-text">min</h3>
+                </div>
+                <div id="long-break"><h4 id="l-container-name">Long Break</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="long-logo"><path fill="#ffffff" d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z"/></svg>
+                    <input type="number" id="long-break-value"  value="0.1" ><h3 id="l-minutes-text">min</h3>
+                </div>
+                <button id="start-pause-id" class="start-pause"><h1 id="start-button-text">START</h1></button>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-options">Options</h2>
+                <div class="modal-container">
+                    <div id="theme-group">
+                        <h3 id="theme">Theme</h3>
+                        <div class="custom-dropdown">
+                            <div id="theme-selector" class="dropdown-selected"><p id="dropdown-item-text" id="dropdown-item-text-d">DEFAULT</p></div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-item" data-value="default"><p id="dropdown-item-text" id="dropdown-item-text-d">DEFAULT</p></div>
+                                <div class="dropdown-item" data-value="fire"><p id="dropdown-item-text" id="dropdown-item-text-f">🔥  FIRE</p></div>
+                                <div class="dropdown-item" data-value="space"><p id="dropdown-item-text" id="dropdown-item-text-s">🌌  SPACE</p></div>
+                                <div class="dropdown-item" data-value="nature"><p id="dropdown-item-text" id="dropdown-item-text-n">🌿  NATURE</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="streak-group">
+                        <h3 id="streak">Streak</h3>
+                        <input type="number" id="number-input" class="number-input" value="4" min="4" max="10">  
+                    </div>
+
+                    <!--<div class="button-container">
+                          <input type="checkbox" id="check">
+                        <label for="check" class="o-button"></label>
+                    </div>-->
+                       
+                </div>
+                <button id="save-theme"><h3 id="save-text">SAVE</h3></button>
+            </div>
+        </div>
+        <canvas id="waterCanvas"></canvas>   
+        <script src="script.js"></script>        
+    </body>
+</html>
